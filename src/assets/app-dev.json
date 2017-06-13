@@ -1,0 +1,31 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "OpenFin Webinar",
+        "description": "Webinar presentation for OpenFin - first presented 2/8/17",
+        "url": "http://localhost:4200/index.html",
+        "uuid": "OpenFin Webinar-udbrf2z9sehilik9",
+        "autoShow": true,
+        "defaultCentered": true,
+        "applicationIcon": "http://localhost:4200/favicon.ico",
+        "frame": true,
+        "defaultHeight": 300,
+        "defaultWidth": 300,
+        "alwaysOnTop" : false,
+        "cornerRounding": {
+            "width": 10,
+            "height": 10
+        }
+
+    },
+    "runtime": {
+        "arguments": "7.53.20.20",
+        "version": "stable"
+    },
+    "shortcut": {
+        "company": "OpenFin",
+        "description": "Openfin Webinar",
+        "name": "Openfin Webinar",
+        "icon": "http://localhost:4200/img/favicon.ico"
+    }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibService } from 'f-gui-core';
+
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'app';
   meaning: number;
 
-  constructor(libService: LibService) {
-    this.meaning = libService.getMeaning();
+  constructor() {
+    
   }
 }

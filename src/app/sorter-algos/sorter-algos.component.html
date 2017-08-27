@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="numbers">    
+  </div>
+  <div class="col-2">
+    <select class="form-control" [(ngModel)]="strategy">
+      <option value="BUBBLE" >Bubble</option>
+      <option value="SELECTION">Selection</option>
+      <option value="INSERTION">Insertion</option>
+      <option value="MERGE">Merge</option>
+      <option value="QUICK">Quick</option>
+    </select>
+  </div>
+  <div class="col-1">
+    <button class="btn btn-primary" (click)="onSort()">Sort</button>
+  </div>
+</div>
+<div class="row" *ngIf="result">
+  <div class="col-6">
+      
+      Items Comparisons : {{result.comparisons}} <br>
+      Items Swaps : {{result.swaps}} <br>
+  </div>
+    <div class="col-6">
+      Items Count : {{result.length}} <br>
+      Sorted Output : <br>
+      {{output}}
+    </div>
+</div>
+  

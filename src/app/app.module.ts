@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StringSearchComponent } from './string-search/string-search.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SorterAlgosComponent } from './sorter-algos/sorter-algos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StringSearchComponent
+    StringSearchComponent,
+    SorterAlgosComponent
   ],
   imports: [
     BrowserModule,

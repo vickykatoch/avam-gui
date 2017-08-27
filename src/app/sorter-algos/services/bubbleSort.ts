@@ -11,7 +11,6 @@ export class BubbleSort<T extends IComparable<T>> extends PerformanceTracker<T> 
             do {
                 swap = false;
                 for(let i=1;i<items.length;i++) {
-                    debugger;   
                     if(this.compare(items[i-1],items[i]) > 0 ) {
                         this.swap(items,i-1,i);
                         swap=true;

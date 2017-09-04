@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SorterAlgosComponent } from './sorter-algos/sorter-algos.component';
 import { AvamTicketComponent } from './avam-ticket/avam-ticket.component';
 import { SovLegComponent } from "app/avam-ticket/leg/sov-leg.component";
+import { ObjectValuesPipe } from "app/avam-ticket/object-values.pipe";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SovLegComponent } from "app/avam-ticket/leg/sov-leg.component";
     StringSearchComponent,
     SorterAlgosComponent,
     AvamTicketComponent,
-    SovLegComponent
+    SovLegComponent,
+    ObjectValuesPipe
   ],
   imports: [
     BrowserModule,

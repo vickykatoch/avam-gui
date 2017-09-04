@@ -1,0 +1,15 @@
+.f-flex {
+    display: flex;
+}
+.f-flex-item-full {
+    flex-grow: 1;
+}
+.f-flex-item-part {
+    flex-shrink: 0;
+}
+.f-flex-row {
+    flex-direction: row;
+}
+.f-flex-col {
+    flex-direction: column;
+}

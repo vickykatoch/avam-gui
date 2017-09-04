@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { StringSearchComponent } from './string-search/string-search.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SorterAlgosComponent } from './sorter-algos/sorter-algos.component';
+import { AvamTicketComponent } from './avam-ticket/avam-ticket.component';
+import { SovLegComponent } from "app/avam-ticket/leg/sov-leg.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     StringSearchComponent,
-    SorterAlgosComponent
+    SorterAlgosComponent,
+    AvamTicketComponent,
+    SovLegComponent
   ],
   imports: [
     BrowserModule,

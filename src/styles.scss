@@ -2,6 +2,14 @@
 @import "styles/core/flex-grid.scss";
 @import "styles/core/main-styles.scss";
 
+:root {
+      --bid-bg : #39659b;
+      --ask-bg : #600000;
+}
+
+body {
+      background: rgb(200,200,200);
+}
 
 input[type="checkbox"] {
       height: 15px;

@@ -1,0 +1,52 @@
+.sov-host {
+    height: inherit;
+    width: inherit;
+    overflow: auto;
+    font-size : 0.8em;
+
+    .muted {
+      opacity: 0.4;
+    }
+
+    .sov-header {
+        background: rgba(119,119,119,.54);
+    }
+    .sovl-tab-header {
+        line-height: 2rem;
+        height: 2rem;
+        background: rgba(119,119,119,.54);
+        font-weight: bold;
+        .icon {
+            margin : 0 5px;
+        }
+        .sovl-item {
+            padding-left: 5px;
+            cursor: pointer;
+        }
+    }
+    .sov-ask {
+        background: var(--ask-bg);
+    }
+    .sov-bid {
+        background: var(--bid-bg);
+    }
+    .meter { 
+        margin: .4rem;
+        height:1.2rem;
+        line-height:1rem;
+        position: relative;
+        border: 1px solid #000;
+    }
+    .meter > span {
+        display: block;
+        height: 100%;
+        background-color: #3f9447;
+        background-image: linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+        );
+        position: relative;
+        overflow: hidden;
+    }
+}

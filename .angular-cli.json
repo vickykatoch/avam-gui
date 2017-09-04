@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "j",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "flex.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

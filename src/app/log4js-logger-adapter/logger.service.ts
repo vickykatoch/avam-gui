@@ -48,7 +48,7 @@ export class Log4JsLoggerService implements ApplicationLoggingService {
     return ajaxAppender;
   }
   private createWebWorkerAppender() : Appender {
-    const appender  = new WebWorkerAppender(false,"assets/workers/logger-worker.js","MarketWatch",50);
+    const appender  = new WebWorkerAppender(true,"assets/workers/logger-worker.js","J-LOGGER",10,10);
 
     const layout = appender.getLayout();
     layout.setKeys('src','ts','lvl','msg','ex', 'url');

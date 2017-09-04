@@ -9,6 +9,8 @@ import { AvamTicketComponent } from './avam-ticket/avam-ticket.component';
 import { SovLegComponent } from "app/avam-ticket/leg/sov-leg.component";
 import { ObjectValuesPipe } from "app/avam-ticket/object-values.pipe";
 import {AgGridModule} from "ag-grid-angular/main";
+import { ApplicationLoggingService } from "app/logger-core";
+import { Log4JsLoggerService } from "app/log4js-logger-adapter";
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import {AgGridModule} from "ag-grid-angular/main";
     ReactiveFormsModule,
     AgGridModule.withComponents([])
   ],
-  providers: [],
+  providers: [
+    { provide: ApplicationLoggingService, useClass: Log4JsLoggerService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

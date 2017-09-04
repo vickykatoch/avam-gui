@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Logger, getLogger, BrowserConsoleAppender, PatternLayout, logLog, AjaxAppender, JsonLayout } from 'log4javascript';
+import { ApplicationLoggingService, ApplicationLogger } from "app/logger-core";
 
 
 
@@ -10,13 +11,21 @@ import { Logger, getLogger, BrowserConsoleAppender, PatternLayout, logLog, AjaxA
 })
 export class AppComponent {
 
-  private logger : Logger;
+  private logger : ApplicationLogger;
   title = 'app';
   meaning: number;
 
-  constructor() {
+  constructor(private loggerService: ApplicationLoggingService) {
+    this.logger = loggerService.getLogger('ApplicationComponent');
+    setInterval(()=> {
+      this.logger.info('Info message is logged');
+      this.logger.warn('Warning message is logged');
+      this.logger.error('Error message is logged');
+      this.logger.debug('Debug message is logged');
+      this.logger.trace('Trace message is logged');
+    }, 10);
     // try {
-    this.setupLogger();
+    // this.setupLogger();
     
     // var arr = [1, 5, 6, 9, 10, 12, 14, 16, 20];
     // var ans = this.binarySearch(arr, 0, arr.length - 1, 10);
@@ -52,29 +61,29 @@ export class AppComponent {
     return this.binarySearch(array, mid + 1, right, key);
   }
   private setupLogger() {
-    this.logger = getLogger('AppComponent');
-    const appender = new BrowserConsoleAppender();
-    const layout = new PatternLayout("%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] [%c] [%f{1}]- %m%n");
-    layout.setCustomField('user', 'bkatoch');
-    layout.setCustomField('mac', 'BDRWE0987');
+    // this.logger = getLogger('AppComponent');
+    // const appender = new BrowserConsoleAppender();
+    // const layout = nedw PatternLayout("%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] [%c] [%f{1}]- %m%n");
+    // layout.setCustomField('user', 'bkatoch');
+    // layout.setCustomField('mac', 'BDRWE0987');
     
-    const ajaxAppender = new AjaxAppender('http://localhost:3000/log');
-    // ajaxAppender.setBatchSize(3);
-    ajaxAppender.setTimerInterval(10000);
-    const aLayout = new JsonLayout(false,false);
-    aLayout.setKeys('src','ts','lvl','msg','ex', 'url');
-    aLayout.setCustomField('user', 'bkatoch');
-    aLayout.setCustomField('app', 'MKTWATCH');
-    // ajaxAppender.addHeader('Access-Control-Allow-Headers', 'Content-Type');
-    // ajaxAppender.addHeader('Access-Control-Allow-Methods', 'GET, POST');
-    // ajaxAppender.addHeader('Access-Control-Allow-Origin', '*');
-    ajaxAppender.addHeader('content-type' , 'application/json');
+    // const ajaxAppender = new AjaxAppender('http://localhost:3000/log');
+    // // ajaxAppender.setBatchSize(3);
+    // ajaxAppender.setTimerInterval(10000);
+    // const aLayout = new JsonLayout(false,false);
+    // aLayout.setKeys('src','ts','lvl','msg','ex', 'url');
+    // aLayout.setCustomField('user', 'bkatoch');
+    // aLayout.setCustomField('app', 'MKTWATCH');
+    // // ajaxAppender.addHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // // ajaxAppender.addHeader('Access-Control-Allow-Methods', 'GET, POST');
+    // // ajaxAppender.addHeader('Access-Control-Allow-Origin', '*');
+    // ajaxAppender.addHeader('content-type' , 'application/json');
 
 
-    ajaxAppender.setLayout(aLayout);
-    appender.setLayout(aLayout);
-    this.logger.addAppender(appender);
-    this.logger.addAppender(ajaxAppender);
+    // ajaxAppender.setLayout(aLayout);
+    // appender.setLayout(aLayout);
+    // this.logger.addAppender(appender);
+    // this.logger.addAppender(ajaxAppender);
     
   }
 

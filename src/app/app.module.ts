@@ -8,6 +8,8 @@ import { SorterAlgosComponent } from './sorter-algos/sorter-algos.component';
 import { AvamTicketComponent } from './avam-ticket/avam-ticket.component';
 import { SovLegComponent } from "app/avam-ticket/leg/sov-leg.component";
 import { ObjectValuesPipe } from "app/avam-ticket/object-values.pipe";
+import {AgGridModule} from "ag-grid-angular/main";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ObjectValuesPipe } from "app/avam-ticket/object-values.pipe";
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]
